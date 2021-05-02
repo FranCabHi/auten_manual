@@ -1,14 +1,16 @@
 <div class="row">
   <div class="col-xs-8 col-sm-10 col-md-10">
-    <h1>PicStories</h1>
+    <h1>Historias del usuario</h1>
   </div>
+
   <div class="col-xs-4 col-sm-2 col-md-2">
     <%= link_to 'New story', new_story_path, class: "btn btn-info btn-sm" %>
+    <%= @user.name %>
   </div>
 </div>
 
 <div class="row">
-  <% @stories.reverse.each do |story| %>
+  <% @user.stories.reverse.each do |story| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <%= link_to(image_tag(story.picture), story) if story.picture? %>
@@ -26,4 +28,4 @@
 </div>
 
 
-<br>
+
